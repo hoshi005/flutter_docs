@@ -24,6 +24,7 @@
 - [Button](widget/button.md)
 - [プログレスバー](widget/progress.md)
 - [TextField](widget/text_field.md)
+- [ダイアログ](widget/dialog.md)
 
 ## 非同期
 
