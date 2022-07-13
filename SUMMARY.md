@@ -5,6 +5,7 @@
 ## 基本
 
 - [インストール手順](basic/install.md)
+- [アプリのビルドモード](basic/build_mode.md)
 - [pubspec.yamlの使い方](basic/pubspec.md)
 - [使えそうなパッケージ](basic/package.md)
 

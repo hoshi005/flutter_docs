@@ -1,16 +1,5 @@
 # Flutterメモ
 
-## 目次
-
-<!--TOC-->
-
-## release mode で実行
-
-- そのままiOSにビルドすると、繋いだ状態からでしか起動できない
-- 単独起動できるようにするには、`release mode` で実行する必要がある
-
-![](../images/release_mode.png)
-
 ## 基本的な記述の解説
 
 ### StatelessWidget
