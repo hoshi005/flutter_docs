@@ -9,6 +9,11 @@
 - [pubspec.yamlの使い方](basic/pubspec.md)
 - [使えそうなパッケージ](basic/package.md)
 
+## デバッグ機能
+
+- [Device Preview の使い方](debug/device_preview.md)
+- [レイアウトガイドの表示](debug/print_size.md)
+
 ## Dart
 
 - [Dartの基本](dart/about_dart.md)
