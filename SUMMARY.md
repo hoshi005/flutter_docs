@@ -54,4 +54,8 @@
 
 - [MVVM](design/mvvm.md)
 - [Provider](design/provider.md)
-- [Flutter](Flutterメモ.md)
+
+## その他
+
+- [Flutter memo](flutter_memo.md)
+- [Flutterメモ](Flutterメモ.md)

@@ -11,6 +11,7 @@
     - [SliverGridDelegateWithFixedCrossAxisCount](#slivergriddelegatewithfixedcrossaxiscount)
     - [SliverGridDelegateWithMaxCrossAxisExtent](#slivergriddelegatewithmaxcrossaxisextent)
   - [横スクロール](#横スクロール)
+  - [アイテムの比率](#アイテムの比率)
 
 <!-- /code_chunk_output -->
 
