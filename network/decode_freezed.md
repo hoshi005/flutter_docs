@@ -73,3 +73,11 @@ $ flutter packages pub run build_runner build --delete-conflicting-outputs
 - 使い方は手動と同じ
 - **さらに記述量が減って楽になる！**
 - **書き方にクセがある！！**
+
+## 参考
+
+- スニペットを使って記述を省略
+  - [Flutter開発を加速するVSCodeスニペットの使い方](https://zenn.dev/k9i/articles/70798511bac2b9)
+  - VSCodeにもプラグインらしきものがあるらしい？
+- JSONのキー名と変数名が違う場合は`@JsonSerializable`を利用する
+  - [【Flutter】freezedで大文字のField名のJSONをパースする方法](https://note.com/minato_i/n/n6fc0410d96e3)
