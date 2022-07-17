@@ -1,5 +1,43 @@
 # Flutterメモ
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Flutterメモ](#flutterメモ)
+  - [基本的な記述の解説](#基本的な記述の解説)
+    - [StatelessWidget](#statelesswidget)
+      - [build()](#build)
+    - [MaterialApp](#materialapp)
+    - [Scaffold](#scaffold)
+      - [appBarプロパティ](#appbarプロパティ)
+      - [bodyプロパティ](#bodyプロパティ)
+    - [state と setState](#state-と-setstate)
+  - [Stateless と Stateful](#stateless-と-stateful)
+    - [大きな違い](#大きな違い)
+    - [StatefulWidget](#statefulwidget)
+    - [State](#state)
+  - [画面遷移](#画面遷移)
+    - [push()](#push)
+  - [レイアウト](#レイアウト)
+    - [Container](#container)
+    - [Column & Row](#column-row)
+      - [基本の使い方](#基本の使い方)
+      - [要素のAlignmentを指定する](#要素のalignmentを指定する)
+      - [要素間のスペースを指定する](#要素間のスペースを指定する)
+      - [Column, Row の全体の大きさを指定する](#column-row-の全体の大きさを指定する)
+      - [要素自体の大きさを指定する](#要素自体の大きさを指定する)
+    - [Text & Icon](#text-icon)
+    - [MaterialApp](#materialapp-1)
+  - [Text](#text)
+  - [Padding, Margin](#padding-margin)
+  - [Stack](#stack)
+  - [Alignment](#alignment)
+  - [VoidCallback](#voidcallback)
+  - [GestureDetector](#gesturedetector)
+
+<!-- /code_chunk_output -->
+
 ## 基本的な記述の解説
 
 ### StatelessWidget
@@ -324,194 +362,6 @@ Alignment.centerRight
 | topLeft | topCenter | topRight |
 | centerLeft | center | centerRight |
 | bottomLeft | bottomCenter | bottomRight |
-
-## List
-
-一覧を表示する際は `ListView` を利用する。
-表示する要素やデータによって、コンストラクタを切り替えて利用する。
-
-### 1. デフォルトコンストラクタ
-
-`ListView()`を利用する方法。静的なリスト。`children`のみ指定可能。`builder`がないので、**事前にウィジェットの一覧を作成**しておく必要がある。
-
-```dart
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    const data = [
-      Text("item0"),Text("item1"),Text("item2"),Text("item3"),Text("item4"),
-    ];
-    return MaterialApp(
-      home: Scaffold(
-        body: ListView(
-          children: data
-        ),
-      ),
-    );
-  }
-}
-```
-
-`ListTile`を利用すると、セル一つ一つを一般的な見せ方で作成できる。
-
-### 2. ListView.builder
-
-主に動的なリストを作成する際に利用する。`ListView.builder()`の引数`itemCount`を指定すれば、リスト数を制限できる。
-
-```dart
-class List02 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    var list = ["ロコ", "四条貴音", "高坂海美", "最上静香", "田中琴葉", "白石紬",];
-
-    return MaterialApp(
-      title: "List 02",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("ListView"),
-        ),
-        body: ListView.builder(
-          itemBuilder: (BuildContext context, int index) {
-            return _messageItem(list[index]);
-          },
-          itemCount: list.length, // 件数をここで指定する.
-        ),
-      ),
-    );
-  }
-}
-```
-
-### 横スクロール
-
-ListViewを横スクロールさせるには、`scrollDirection`を指定する.
-
-```dart
-ListView.builder(
-  scrollDirection: Axis.horizontal,
-  itemBuilder: (BuildContext context, int index) {
-    // TODO:
-  },
-  itemCount: 5
-),
-```
-
-## Grid
-
-Grid状にコンテンツを並べる場合は`GridView`を利用する。
-`ListView`と同様、表示する方法はいくつかある
-
-### 1. GridView.count
-
-横に並べる数を固定数で指定して表示する.
-あらかじめ、Widgetのリストを作成して指定する.
-
-```dart
-GridView.count(
-  crossAxisCount: 2,
-  padding: const EdgeInsets.all(4), // 大外のパディング
-  mainAxisSpacing: 4, // アイテム間のメイン方法のパディング
-  crossAxisSpacing: 4, // アイテム間のサブ方向のパディング
-  children: list, // Widgetの配列.
-),
-```
-
-### 2. GridView.extent
-
-指定した数値を最大値として、それを超えない値でグリッドを並べる。
-こちらも、あらかじめWidgetのリストを作成して渡す.
-
-```dart
-GridView.extent(
-  maxCrossAxisExtent: 150, // 最大で幅150pとする.
-  padding: const EdgeInsets.all(4),
-  mainAxisSpacing: 4,
-  crossAxisSpacing: 4,
-  children: list,
-),
-```
-
-### 3. GridView.builder
-
-`ListView`と同様、動的に生成するための方法.
-`gridDelegate`で、数を指定するのか幅を指定するのかを決められる.
-`itemCount`で件数を指定しないと無限に続く.
-
-```dart
-GridView.builder(
-  gridDelegate:
-      // 件数指定する場合.
-      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-  itemBuilder: (BuildContext context, int index) {
-    return _photoItem(list[index]);
-  },
-  itemCount: list.length,
-),
-```
-
-#### SliverGridDelegateWithFixedCrossAxisCount
-
-`GridView.count`と同様、横に並べる件数を指定してGridを表示する.
-アイテム間のスペースもここで指定する.
-
-```dart
-SliverGridDelegateWithFixedCrossAxisCount(
-  crossAxisCount: 2,
-  mainAxisSpacing: 4,
-  crossAxisSpacing: 4
-),
-```
-
-#### SliverGridDelegateWithMaxCrossAxisExtent
-
-`GridView.extent`と同様、横に並べるグリッドの最大幅を指定してGridを表示する.
-
-```dart
-SliverGridDelegateWithMaxCrossAxisExtent(
-  maxCrossAxisExtent: 150,
-  mainAxisSpacing: 4,
-  crossAxisSpacing: 4
-)
-```
-
-### 横スクロール
-
-`ListView`と同様、横スクロールさせるには`scrollDirection`に`Axis.horizontal`を指定すれば良い.
-
-```dart
-GridView.builder(
-  scrollDirection: Axis.horizontal,
-  gridDelegate:
-      // 件数指定する場合.
-      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-  itemBuilder: (BuildContext context, int index) {
-    return _photoItem(list[index]);
-  },
-  itemCount: list.length,
-),
-```
-
-### アイテムの比率
-
-デフォルトは、1:1で表示される。
-比率を指定する場合は`childAspectRatio`を利用する。
-
-```dart
-GridView.builder(
-  scrollDirection: Axis.horizontal,
-  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-    crossAxisCount: 3,
-    mainAxisSpacing: 4,
-    crossAxisSpacing: 4,
-    childAspectRatio: 9/16 // 比率を指定.
-  ),
-  itemBuilder: (BuildContext context, int index) {
-    return _photoItem(items[index]);
-  },
-  itemCount: items.length,
-  padding: const EdgeInsets.all(4),
-)
-```
 
 ## VoidCallback
 
