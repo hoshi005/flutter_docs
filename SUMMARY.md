@@ -30,6 +30,8 @@
 - [プログレスバー](widget/progress.md)
 - [TextField](widget/text_field.md)
 - [ダイアログ](widget/dialog.md)
+- [List](widget/list.md)
+- [Grid](widget/grid.md)
 
 ## 非同期
 
