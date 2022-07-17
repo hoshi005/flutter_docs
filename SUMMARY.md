@@ -43,5 +43,6 @@
 
 ## デザインパターン
 
+- [MVVM](design/mvvm.md)
 - [Provider](design/provider.md)
 - [Flutter](Flutterメモ.md)
