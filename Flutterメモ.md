@@ -114,28 +114,6 @@
 
 ## レイアウト
 
-### Container
-
-内包する子ウィジェットをカスタマイズするために利用する
-
-- padding
-- margin
-- border
-- 背景色
-- など
-
-```dart
-child: Container(
-  color: Colors.blue,
-  width: 300,
-  height: 300,
-  child: Text('word', style: TextStyle(color: Colors.white,),),
-  margin: const EdgeInsets.all(100),
-  alignment: Alignment.center.
-  transform: Matrix4.rotationZ(0.1)
-),
-```
-
 ### Column & Row
 
 子要素を縦、または横に並べる。`VStack`, `HStack` のようなものか
