@@ -18,6 +18,7 @@
 
 - [Dartの基本](dart/about_dart.md)
 - [NullSafety](dart/null_safety.md)
+- [finalとconst](dart/const_final.md)
 
 ## Flutter
 
