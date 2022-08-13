@@ -17,6 +17,8 @@ loadFlag() async {
 }
 ```
 
+---
+
 ## url_launcher
 
 - <https://pub.dev/packages/url_launcher>
@@ -39,6 +41,8 @@ IconButton(
 )
 ```
 
+---
+
 ## flutter_launcher_icons
 
 - <https://pub.dev/packages/flutter_launcher_icons>
@@ -46,12 +50,14 @@ IconButton(
 
 ```yaml
 dev_dependencies:
-  flutter_launcher_icons: "^0.9.0"
+  flutter_launcher_icons: "^0.10.0"
 
 flutter_icons:
-  android: "launcher_icon"
+  android: true
   ios: true
   image_path: "assets/icon/icon.png"
+  adaptive_icon_foreground: "assets/icon/icon_adaptive_foreground.png"
+  adaptive_icon_background: "#ffffff"
 ```
 
 上記にアイコンファイルの元を配置して以下コマンド
@@ -60,6 +66,8 @@ flutter_icons:
 $ flutter pub get
 $ flutter pub run flutter_launcher_icons:main
 ```
+
+---
 
 ## font_awesome_flutter
 
@@ -76,6 +84,8 @@ font_awesome_flutter: ^9.0.0
 FaIcon(FontAwesomeIcons.amazon, color: Colors.redAccent,)
 Icon(FontAwesomeIcons.amazon, color: Colors.redAccent,)
 ```
+
+---
 
 ## flushbar / another_flushbar
 
