@@ -8,6 +8,7 @@
 - [アプリのビルドモード](basic/build_mode.md)
 - [pubspec.yamlの使い方](basic/pubspec.md)
 - [使えそうなパッケージ](basic/package.md)
+- [FVM](basic/fvm.md)
 
 ## デバッグ機能
 
