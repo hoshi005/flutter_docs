@@ -30,6 +30,8 @@
 ## Widget
 
 - [Container](widget/container.md)
+- [Stack](widget/stack.md)
+- [Alignment](widget/alignment.md)
 - [Column & Row](widget/column_row.md)
 - [Button](widget/button.md)
 - [プログレスバー](widget/progress.md)
