@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "honkit": "^4.0.0"
+  },
+  "scripts": {
+    "deploy": "npx honkit build"
   }
 }
