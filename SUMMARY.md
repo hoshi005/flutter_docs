@@ -22,6 +22,7 @@
 - [NullSafety](dart/null_safety.md)
 - [finalとconst](dart/const_final.md)
 - [enum](dart/enum.md)
+- [..と...(カスケード記法、スプレッド記法)](dart/cascade_spread.md)
 
 ## Flutter
 
