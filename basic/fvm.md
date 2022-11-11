@@ -25,3 +25,14 @@ $ fvm use 3.0.5
 ```bash
 $ fvm install
 ```
+
+## VSCodeの設定
+
+- setting.json 開く
+- 以下を追加
+
+```json
+{
+  "dart.flutterSdkPath": ".fvm/flutter_sdk"
+}
+```
