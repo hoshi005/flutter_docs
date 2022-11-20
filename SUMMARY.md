@@ -42,6 +42,10 @@
 - [List](widget/list.md)
 - [Grid](widget/grid.md)
 
+## Layout, 見た目のtips
+
+- [等幅フォントとプロポーショナルフォント](layout/font.md)
+
 ## 非同期
 
 - [async, await, then](async/async.md)
