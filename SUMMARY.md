@@ -70,6 +70,11 @@
 - [MVVM](design/mvvm.md)
 - [Provider](design/provider.md)
 
+## 状態管理
+
+- [状態管理](state/state.md)
+- [Redux](state/redux.md)
+
 ## Riverpod
 
 - [Riverpod](riverpod/riverpod.md)
