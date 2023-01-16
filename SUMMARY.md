@@ -90,6 +90,7 @@
 ## Server
 
 - [docker](server/docker.md)
+- [GraphQL](server/graphql.md)
 
 ## フロントエンド
 
