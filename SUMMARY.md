@@ -94,7 +94,9 @@
 ## フロントエンド
 
 - [フロントエンド開発](front/front.md)
+- [javascript](front/javascript.md)
 - [TypeScript](front/typescript.md)
+- [React](react/react.md)
 
 ## その他
 
