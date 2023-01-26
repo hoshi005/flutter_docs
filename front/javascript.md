@@ -71,3 +71,4 @@ const user = {
     name,
     age,
 };
+```
