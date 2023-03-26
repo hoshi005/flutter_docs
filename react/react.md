@@ -21,6 +21,12 @@
     - [useEffectの実行タイミング](#-useeffectの実行タイミング)
     - [クリーンナップ関数](#-クリーンナップ関数)
     - [useEffectのユースケース](#-useeffectのユースケース)
+  - [Styleについて](#-styleについて)
+  - [Storybook](#-storybook)
+  - [再レンダリングとmemo化](#-再レンダリングとmemo化)
+    - [再レンダリングされるタイミング](#-再レンダリングされるタイミング)
+    - [memo化とは](#-memo化とは)
+  - [グローバルなState管理](#-グローバルなstate管理)
 
 <!-- /code_chunk_output -->
 
@@ -172,3 +178,61 @@ const [likes, setLikes] = useState(0)
 
 - APIやデータベースから非同期通信でデータを取得(fetch)する
 - 特定の値が変わったらデータを再取得(refetch)する
+
+## Styleについて
+
+- inline style
+  - タグ内に書く、もしくは定数にしてタグ内に埋める
+- CSS Modules
+  - .cssファイルを定義して読み込む
+  - コンポーネントごとに.cssファイルを作ることが多い
+- Styled JSX
+  - cssの内容をコンポーネント内に記述する
+  - Next.jsで標準に組み込まれている
+  - あまり使わなさそう？
+- styled components
+  - よさそう
+  - スタイルを当てたコンポーネントを定義する
+  - 薬局管理画面で採用している方法に似ている？？
+- Emotion
+  - 幅広い使い方が可能っぽい
+  - すでに挙げた上記の方法と似たようなことが可能
+    - inline style
+    - Styled JSX
+    - styled components
+- Tailwind CSS
+
+## Storybook
+
+- コンポーネントのカタログみたいなやつ
+- プロジェクト内にどんなコンポーネントがあるのかを確認できるっぽい 
+
+## 再レンダリングとmemo化
+
+### 再レンダリングされるタイミング
+
+- State更新時
+- Props変更時
+- 親コンポーネントが再レンダリングされた時
+
+### memo化とは
+
+- 処理結果を保存して、処理を高速化する技術
+- コンポーネントのmemo化は`memo`
+- 関数のmemo化は`useCallback`
+- 変数のmemo化は`useMemo`
+
+## グローバルなState管理
+
+- Reactが公式に提供しているContextを利用する
+  - `createContext`でContextの器を作成
+  - Providerで囲う
+  - コンポーネントで`useContext`を使う
+- 他にも選択肢がある
+  - Redux
+  - Recoil
+  - Apollo Client
+
+## 同じ内容が２回出力される
+
+- コンソールに同じ内容が２回表示される場合は、`index.tsx`から`React.StrictMode`を消せば良い
