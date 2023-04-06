@@ -100,7 +100,7 @@
 - [React](react/react.md)
 - [Next](react/next.md)
 
-## Anddroid
+## Android
 
 - [Jetpack Compose](android/jetpack_compose.md)
 
