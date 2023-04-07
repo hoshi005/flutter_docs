@@ -8,6 +8,7 @@
   - [Auto Assign](#auto-assign)
   - [PRテンプレート](#prテンプレート)
   - [renovate](#renovate)
+  - [Labeler](#labeler)
 
 <!-- /code_chunk_output -->
 
@@ -29,3 +30,30 @@
 - https://github.com/apps/renovate
 - 依存パッケージのアップデートを自動でやってくれる
 - Githubに追加、リポジトリに追加
+
+## Labeler
+
+- PRに対して、ラベルを自動付与してくれる
+- `.github/workflows/labeler.yml`
+
+```yml
+name: "Pull Request Labeler"
+on:
+  - pull_request_target
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v4
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        sync-labels: true
+```
+
+- `.github/labeler.yml`
+
+```yml
+document:
+- '*'
+```
