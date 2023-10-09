@@ -44,6 +44,7 @@
 
 ## Layout, 見た目のtips
 
+- [Theme設定](layout/theme.md)
 - [等幅フォントとプロポーショナルフォント](layout/font.md)
 
 ## 非同期
