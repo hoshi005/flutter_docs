@@ -97,6 +97,7 @@
 
 - [docker](server/docker.md)
 - [GraphQL](server/graphql.md)
+- [さくらサーバ](server/sakura.md)
 
 ## フロントエンド
 
@@ -105,6 +106,10 @@
 - [TypeScript](front/typescript.md)
 - [React](react/react.md)
 - [Next](react/next.md)
+
+## Python
+
+- [Python基礎](python/python.md)
 
 ## Android
 
