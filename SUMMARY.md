@@ -24,6 +24,8 @@
 - [finalとconst](dart/const_final.md)
 - [enum](dart/enum.md)
 - [..と...(カスケード記法、スプレッド記法)](dart/cascade_spread.md)
+- [例外処理](exception/exception.md)
+- [拡張](dart/extension.md)
 
 ## Flutter
 
