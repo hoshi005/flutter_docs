@@ -31,6 +31,7 @@
 
 - [アプリのライフサイクル](lifecycle/app_lifecycle.md)
 - [StatefulWidgetのライフサイクル](lifecycle/stateful_widget_lifecycle.md)
+- [Android Stidio を新しくしたらAndroidがビルドできなくなった件](android/update_android_studio.md)
 
 ## Firebase
 
